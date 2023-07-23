@@ -85,7 +85,7 @@ def main():
         connectWifi()
         pool = socketpool.SocketPool(wifi.radio)
         session = Session(pool, ssl.create_default_context())
-        headers = None
+        headers = {}
         if 'github_token' in secrets:
             headers = {'Authorization': 'Bearer ' + secrets['github_token']}
         data = getData(session, headers)
